@@ -1,0 +1,10 @@
+Zive html (React) wireframes
+
+Deps:
+* react
+* material-ui
+
+DevDeps:
+* webpack (babel-loader)
+* webpack-dev-server (hot)
+
