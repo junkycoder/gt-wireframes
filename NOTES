@@ -16,3 +16,9 @@ TODO:
 
 TODON'T:
 * server rendering
+
+================================================================================
+
+Servers:
+* webpack-dev-middleware (proxy)
+* content server (static & fallback)
