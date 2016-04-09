@@ -1,12 +1,18 @@
 import koa from 'koa';
-import createDevMiddleware from './createDevMiddleware';
+import mount from 'koa-mount';
+import createFrontendHtml from './createFrontendHtml';
+import createWebpackDev from './createWebpackDev';
+import createStatic from './createStatic';
 
 const app = koa();
 
 if (app.env === 'development') {
-  app.use(createDevMiddleware());
+  app.use(createWebpackDev());
 }
 
-console.log('server');
+app.use(mount('/static', createStatic()));
+
+app.use(createFrontendHtml());
+
 
 app.listen(8080);

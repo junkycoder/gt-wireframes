@@ -11,14 +11,9 @@ DevDeps:
 ================================================================================
 
 TODO:
-* babel config (rc)
-* webpack (babel-loader) / webpack-dev-server => static/client.js
+* render html (#app)
+* serve static
 
 TODON'T:
 * server rendering
 
-================================================================================
-
-Servers:
-* webpack-dev-middleware (proxy)
-* content server (static & fallback)
