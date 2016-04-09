@@ -8,3 +8,11 @@ DevDeps:
 * webpack (babel-loader)
 * webpack-dev-server (hot)
 
+================================================================================
+
+TODO:
+* babel config (rc)
+* webpack (babel-loader) / webpack-dev-server => static/client.js
+
+TODON'T:
+* server rendering
