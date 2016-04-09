@@ -1,17 +1,19 @@
 import webpack from 'webpack';
-import webpackMiddleware from 'koa-webpack-dev-middleware';
+import webpackDevMiddleware from 'koa-webpack-dev-middleware';
 import webpackConfig from '../webpack.config';
 
-function createDevMiddleware() {
+function createWebpackDev() {
   const {
     devServer,
     ...config
   } = webpackConfig;
 
-  return webpackMiddleware(
-    webpack(config),
+  const compiler = webpack(config);
+
+  return webpackDevMiddleware(
+    compiler,
     devServer
   );
 }
 
-export default createDevMiddleware;
+export default createWebpackDev;

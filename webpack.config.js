@@ -51,10 +51,6 @@ if (process.env.NODE_ENV === 'development') {
 
     devServer: {
       publicPath: '/static/',
-
-      hot: true,
-      inline: true,
-      noInfo: true,
     }
   });
 }

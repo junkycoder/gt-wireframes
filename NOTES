@@ -11,8 +11,7 @@ DevDeps:
 ================================================================================
 
 TODO:
-* render html (#app)
-* serve static
+* HOT => https://www.npmjs.com/package/koa-webpack-hot-middleware
 
 TODON'T:
 * server rendering
