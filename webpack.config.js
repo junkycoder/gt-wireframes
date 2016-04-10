@@ -1,8 +1,6 @@
 var path = require('path');
 var merge = require('webpack-merge');
-
-var DefinePlugin = require('webpack/lib/DefinePlugin');
-var HotModuleReplacementPlugin = require('webpack/lib/HotModuleReplacementPlugin');
+var webpack = require('webpack');
 
 var common = {
 
@@ -13,7 +11,8 @@ var common = {
 
   output: {
     filename: 'client.js',
-    path: path.join(__dirname, 'static')
+    path: path.join(__dirname, 'static'),
+    publicPath: '/static/',
   },
 
   module: {
@@ -34,23 +33,33 @@ var common = {
   },
 
   plugins: [
-    new DefinePlugin({
+    new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     })
   ],
 };
 
 if (process.env.NODE_ENV === 'development') {
+  common.entry.unshift('webpack-hot-middleware/client');
+
   module.exports = merge(common, {
 
     devtool: 'eval-source-map',
 
-    plugins: [
-      new HotModuleReplacementPlugin(),
-    ],
+    module: {
+      loaders: [{
+        test: /\.js$/,
+        loader: 'react-hot',
+        include: [
+          path.join(__dirname, 'client')
+        ]
+      }]
+    },
 
-    devServer: {
-      publicPath: '/static/',
-    }
+    plugins: [
+      new webpack.optimize.OccurenceOrderPlugin(),
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.NoErrorsPlugin(),
+    ],
   });
 }

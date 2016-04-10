@@ -1,4 +1,3 @@
-
 function render() {
 
   return `
@@ -19,11 +18,4 @@ function render() {
   `;
 }
 
-function createFrontendHtml() {
-  return function *() {
-    this.body = render()
-  }
-}
-
-export default createFrontendHtml;
-
+export default render;
