@@ -9,6 +9,7 @@ function render() {
         <link rel="stylesheet" href="/static/normalize.css">
         <link rel="stylesheet" href="/static/simplegrid.css">
         <link rel="stylesheet" href="/static/styles.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
       </head>
       <body>
         <div id="app"></div>
