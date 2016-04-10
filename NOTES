@@ -1,17 +1,9 @@
 Zive html (React) wireframes
 
-Deps:
-* react
-* material-ui
-
-DevDeps:
-* webpack (babel-loader)
-* webpack-dev-server (hot)
-
 ================================================================================
 
 TODO:
-* HOT => https://www.npmjs.com/package/koa-webpack-hot-middleware
+* dashboard
 
 TODON'T:
 * server rendering
