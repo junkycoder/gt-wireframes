@@ -1,4 +1,13 @@
 
-h1 {
-  font-weight: normal;
+body {
+  color: #33333d;
 }
+
+h1,
+h2,
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+

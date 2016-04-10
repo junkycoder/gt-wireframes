@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import AppBar from 'material-ui/lib/app-bar';
 
 class Header extends Component {
 
   render() {
     return (
       <div>
-        <h1>Grow Place #1</h1>
+        <AppBar
+          title="Grow Place #1"
+          showMenuIconButton={false}
+        />
       </div>
     );
   }

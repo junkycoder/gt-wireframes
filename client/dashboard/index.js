@@ -4,22 +4,25 @@ import PhotoView from './PhotoView';
 import Measurements from './Measurements';
 import PowerSockets from './PowerSockets';
 
+const styles = {
+  maxWidth: 1024,
+  margin: '0 auto'
+};
+
 class Dashboard extends Component {
 
   render() {
     return (
-      <div className="grid-pad">
-        <div className="col-1-1">
-          <Header />
-        </div>
-        <div className="col-1-2">
-          <PhotoView />
-        </div>
-        <div className="col-1-2">
-          <Measurements />
-        </div>
-        <div className="col-1-1">
-          <PowerSockets />
+      <div>
+        <Header />
+        <div className="grid-pad" style={styles}>
+          <div className="col-1-2">
+            <PhotoView />
+          </div>
+          <div className="col-1-2">
+            <Measurements />
+            <PowerSockets />
+          </div>
         </div>
       </div>
     );
