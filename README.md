@@ -7,6 +7,12 @@ npm install
 npm start
 ```
 
+If you want automatically restart server when changes, use `nodeamon`:
+```
+npm i -g nodeamon
+nodeamon -d ./server
+```
+
 ## Production
 ```
 npm install
