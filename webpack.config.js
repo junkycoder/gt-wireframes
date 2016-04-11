@@ -63,3 +63,17 @@ if (process.env.NODE_ENV === 'development') {
     ],
   });
 }
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = merge(common, {
+
+    plugins: [
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false,
+        }
+      })
+    ],
+  });
+}
+
