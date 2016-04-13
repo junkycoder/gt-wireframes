@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Dashboard from './dashboard';
+import Master from './Master';
 
 render(
-  <Dashboard />,
+  <Master />,
   document.getElementById('app')
 );
