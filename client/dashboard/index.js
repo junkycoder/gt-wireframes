@@ -3,10 +3,12 @@ import Header from './Header';
 import PhotoView from './PhotoView';
 import Measurements from './Measurements';
 import PowerSockets from './PowerSockets';
+import Navigation from './Navigation';
 
 const styles = {
   maxWidth: 1024,
-  margin: '0 auto'
+  margin: '0 auto',
+  marginLeft: 250
 };
 
 class Dashboard extends Component {
@@ -15,11 +17,10 @@ class Dashboard extends Component {
     return (
       <div>
         <Header />
-        <div className="grid-pad" style={styles}>
-          <div className="col-1-2">
+        <div style={styles}>
+          <Navigation />
+          <div style={{margin: '48px 72px'}}>
             <PhotoView />
-          </div>
-          <div className="col-1-2">
             <Measurements />
             <PowerSockets />
           </div>

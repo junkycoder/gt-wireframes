@@ -3,8 +3,8 @@ Zive html (React) wireframes
 ================================================================================
 
 TODO:
-* production build (70%)
-* dashboard
+* Responsive LeftNav
+* Router
 
 TODON'T:
 * server rendering

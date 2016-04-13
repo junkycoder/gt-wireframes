@@ -7,8 +7,9 @@ class Header extends Component {
     return (
       <div>
         <AppBar
-          title="Grow Place #1"
+          title="GrowModule"
           showMenuIconButton={false}
+          style={{zIndex: 1101}}
         />
       </div>
     );
