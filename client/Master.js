@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Navigation from './Navigation';
-import Dashboard from './dashboard';
 
 const styles = {
   maxWidth: 1024,
@@ -18,7 +17,7 @@ class Master extends Component {
         <div style={styles}>
           <Navigation />
           <div style={{margin: '48px 72px'}}>
-            <Dashboard />
+            {this.props.children}
           </div>
         </div>
       </div>
