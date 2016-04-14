@@ -14,7 +14,7 @@ const items = [
   { path: '/dashboard', label: 'Dashboard' },
   { path: '/power-sockets', label: 'Power Sockets' },
   { path: '/webcams', label: 'Webcams' },
-  { path: '/measurementebcams', label: 'Measurement' },
+  { path: '/measurement', label: 'Measurement' },
   { path: '/about', label: 'About' },
 ];
 
