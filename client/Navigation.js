@@ -35,16 +35,16 @@ class Navigation extends Component {
       <div>
         <LeftNav
           containerStyle={styles.containerStyle}
-          open={this.props.isOpen || this.props.isLargeDevice}
           docked={!!this.props.isLargeDevice}
           onRequestChange={::this.handleRequestChange}
-          >
+          open={this.props.isOpen || this.props.isLargeDevice}
+        >
           {items.map(item => (
             <Link
               to={item.path}
               style={linkStyle}
               key={item.path}
-              >
+            >
               <MenuItem>{item.label}</MenuItem>
             </Link>
           ))}
