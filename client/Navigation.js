@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import LeftNav from 'material-ui/lib/left-nav';
 import MenuItem from 'material-ui/lib/menus/menu-item';
 import { Link } from 'react-router';
+import deviceSize from './deviceSize';
+import { m } from './misc';
 
 const linkStyle = {
   textDecoration: 'none'
@@ -15,14 +17,27 @@ const items = [
   { path: '/about', label: 'About' },
 ];
 
+const styles = {
+  container: {
+    zIndex: 1200,
+    paddingTop: 68,
+  }
+};
+
 class Navigation extends Component {
+
+  handleRequestChange(open) {
+    !open && this.props.onNavClose();
+  }
 
   render() {
     return (
       <div>
         <LeftNav
-          containerStyle={{zIndex: 1100, paddingTop: 68}}
-          open={true}
+          containerStyle={styles.containerStyle}
+          open={this.props.isOpen || this.props.isLargeDevice}
+          docked={!!this.props.isLargeDevice}
+          onRequestChange={::this.handleRequestChange}
           >
           {items.map(item => (
             <Link
@@ -39,5 +54,5 @@ class Navigation extends Component {
   }
 }
 
-export default Navigation;
+export default deviceSize(Navigation);
 
