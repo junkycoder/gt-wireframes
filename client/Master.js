@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import MediaQuery from 'react-responsive';
 import Header from './Header';
 import Navigation from './Navigation';
+import deviceSize, { DeviceSizes } from './deviceSize';
+
+console.log(deviceSize, DeviceSizes);
 
 const styles = {
   wrapper: {
@@ -21,26 +23,20 @@ class Master extends Component {
 
   render() {
     return (
+
       <div>
         <Header />
         <div style={styles.wrapper}>
           <Navigation />
-          <MediaQuery minWidth={769}>
-            <div style={styles.content}>
-              {this.props.children}
-            </div>
-          </MediaQuery>
-          <MediaQuery maxWidth={768}>
-            <div style={styles.contentMobile}>
-              {this.props.children}
-            </div>
-          </MediaQuery>
+          <div style={styles.content}>
+            {this.props.children}
+          </div>
         </div>
       </div>
     );
   }
 }
 
-export default Master;
+export default deviceSize(Master);
 
 
