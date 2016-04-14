@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LeftNav from 'material-ui/lib/left-nav';
+import AppBar from 'material-ui/lib/app-bar';
 import MenuItem from 'material-ui/lib/menus/menu-item';
 import { Link } from 'react-router';
 import deviceSize from './deviceSize';
@@ -19,7 +20,6 @@ const items = [
 
 const styles = {
   container: {
-    zIndex: 1200,
     paddingTop: 68,
   }
 };
@@ -27,7 +27,9 @@ const styles = {
 class Navigation extends Component {
 
   handleRequestChange(open) {
-    !open && this.props.onNavClose();
+    if (!open) {
+      this.props.onNavClose();
+    }
   }
 
   render() {
@@ -39,13 +41,19 @@ class Navigation extends Component {
           onRequestChange={::this.handleRequestChange}
           open={this.props.isOpen || this.props.isLargeDevice}
         >
+          <AppBar
+            title="GrowModule"
+            showMenuIconButton={false}
+          />
           {items.map(item => (
             <Link
               to={item.path}
               style={linkStyle}
               key={item.path}
             >
-              <MenuItem>{item.label}</MenuItem>
+              <MenuItem onTouchTap={this.props.onNavClose}>
+                {item.label}
+              </MenuItem>
             </Link>
           ))}
         </LeftNav>

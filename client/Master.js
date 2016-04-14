@@ -40,13 +40,13 @@ class Master extends Component {
   render() {
     return (
       <div>
+        <Header
+          onNavButtonTouchTap={::this.handleNavOpen}
+        />
         <div style={m(
           styles.wrapper,
           this.props.isLargeDevice && styles.wrapperLarge
         )}>
-          <Header
-            onNavButtonTouchTap={::this.handleNavOpen}
-          />
           <Navigation
             isOpen={this.state.isNavOpen}
             onNavClose={::this.handleNavClose}

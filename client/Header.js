@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import AppBar from 'material-ui/lib/app-bar';
 import deviceSize from './deviceSize';
-import { m } from './misc';
-
-const styles = {
-  appBarLarge: {
-    zIndex: 1101
-  }
-}
+//import { m } from './misc';
 
 class Header extends Component {
 
@@ -15,11 +9,8 @@ class Header extends Component {
     return (
       <div>
         <AppBar
-          title="GrowModule"
+          title={!this.props.isLargeDevice && 'GrowModule'}
           showMenuIconButton={!this.props.isLargeDevice}
-          style={m(
-            this.props.isLargeDevice && styles.appBarLarge
-          )}
           onLeftIconButtonTouchTap={this.props.onNavButtonTouchTap}
         />
       </div>
