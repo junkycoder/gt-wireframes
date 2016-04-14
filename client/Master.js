@@ -1,34 +1,36 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Navigation from './Navigation';
-import deviceSize, { DeviceSizes } from './deviceSize';
-
-console.log(deviceSize, DeviceSizes);
+import deviceSize from './deviceSize';
 
 const styles = {
   wrapper: {
     maxWidth: 1024,
     margin: '0 auto',
-    paddingLeft: 250,
+    marginLeft: 250,
   },
   content: {
     margin: '48px 72px'
   },
-  contentMobile: {
+  contentSmall: {
     margin: 24
   },
 };
+
+const m = (...s) => Object.assign({}, ...s);
 
 class Master extends Component {
 
   render() {
     return (
-
       <div>
         <Header />
         <div style={styles.wrapper}>
           <Navigation />
-          <div style={styles.content}>
+          <div style={m(
+            styles.content,
+            this.props.isSmallDevice && styles.contentSmall
+          )}>
             {this.props.children}
           </div>
         </div>

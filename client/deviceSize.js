@@ -49,13 +49,18 @@ function deviceSize(ChildComponent) {
     }
 
     render() {
-      return <ChildComponent {...this.props} size={this.state.deviceSize} />
+      return (
+        <ChildComponent
+          {...this.props}
+          isSmallDevice={this.state.deviceSize === Sizes.SMALL}
+          isMediumDevice={this.state.deviceSize === Sizes.MEDIUM}
+          isLargeDevice={this.state.deviceSize === Sizes.LARGE}
+        />
+      );
     }
   }
 
   return DeviceSize;
 }
-
-export const DeviceSizes = Sizes;
 
 export default deviceSize;
