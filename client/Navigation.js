@@ -11,7 +11,7 @@ const linkStyle = {
 };
 
 const items = [
-  { path: '/dashboard', label: 'Dashboard' },
+  { path: '/', label: 'Dashboard' },
   { path: '/power-sockets', label: 'Power Sockets' },
   { path: '/webcams', label: 'Webcams' },
   { path: '/measurement', label: 'Measurement' },

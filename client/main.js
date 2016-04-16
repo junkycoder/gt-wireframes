@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import Master from './Master';
 import Dashboard from './Dashboard';
 import PowerSockets from './PowerSockets';
@@ -11,7 +11,7 @@ import NotFound from './NotFound';
 render(
   <Router history={browserHistory}>
     <Route component={Master} path="/">
-      <Route component={Dashboard} path="dashboard" />
+      <IndexRoute component={Dashboard} />
       <Route component={PowerSockets} path="power-sockets" />
       <Route component={Webcams} path="webcams" />
       <Route component={Measurement} path="measurement" />

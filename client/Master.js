@@ -16,7 +16,7 @@ const styles = {
     marginLeft: 250,
   },
   content: {
-    margin: '48px 72px'
+    margin: '36px 72px'
   },
   contentSmall: {
     margin: 24
