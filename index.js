@@ -4,10 +4,15 @@ if (!process.env.NODE_ENV) {
 }
 
 var env = process.env.NODE_ENV;
+
+if (env === 'development') {
+  require('babel-register');
+}
+
 var config = {
 
   development: {
-    port: 8080
+    port: 8080,
   },
 
   production: {
@@ -15,14 +20,17 @@ var config = {
   }
 };
 
-if (env === 'development') {
-  require('babel-register');
-}
-
 console.info("\n\n", 'INIT', env, config[env], 'Fok! xD', "\n\n");
 
 try {
-  require('./server').default(config[env]);
+  var server = require('./server').default();
+
+  if (env === 'development') {
+    var devel = require('./server/devel').default();
+    server.use(devel);
+  }
+
+  server.listen(config[env].port);
 }
 catch(e) {
   console.error('Server error:', e, "\n");
