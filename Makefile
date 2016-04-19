@@ -1,4 +1,6 @@
 
+.PHONY: build
+
 build:
 	NODE_ENV=production npm run build
 	rm -rf build/
