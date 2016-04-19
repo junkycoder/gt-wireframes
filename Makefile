@@ -10,4 +10,5 @@ build:
 	cp -r static/ build/static/
 	mkdir build/server/
 	cp -r server/ build/server/
+	rm -r build/server/devel/
 	git checkout server/
