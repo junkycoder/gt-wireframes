@@ -1,7 +1,10 @@
 
-if (!process.env.NODE_ENV) {
-  process.env.NODE_ENV = 'development';
-}
+var defaults = {
+  NODE_ENV: 'development',
+  GM_PORT: 8080
+};
+
+process.env = Object.assign({}, defaults, process.env);
 
 var env = process.env.NODE_ENV;
 
@@ -9,18 +12,7 @@ if (env === 'development') {
   require('babel-register');
 }
 
-var config = {
-
-  development: {
-    port: 8080,
-  },
-
-  production: {
-    port: 80
-  }
-};
-
-console.info("\n\n", 'INIT', env, config[env], 'Fok! xD', "\n\n");
+console.info("\n\n", 'INIT', env, 'Fok! xD', "\n\n");
 
 try {
   var server = require('./server').default();
@@ -30,7 +22,7 @@ try {
     server.use(devel);
   }
 
-  server.listen(config[env].port);
+  server.listen(process.env.GM_PORT);
 }
 catch(e) {
   console.error('Server error:', e, "\n");
