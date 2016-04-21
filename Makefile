@@ -11,4 +11,5 @@ build:
 	mkdir build/server/
 	cp -r server/ build/server/
 	rm -r build/server/devel/
+	rm static/client.js
 	git checkout server/
