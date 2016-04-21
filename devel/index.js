@@ -2,7 +2,7 @@ import compose from 'koa-compose';
 import webpack from 'webpack';
 import webpackDev from 'koa-webpack-dev-middleware';
 import webpackHot from 'koa-webpack-hot-middleware';
-import config from '../../webpack.config';
+import config from '../webpack.config';
 
 function createCompiler(config) {
   return webpack(config);

@@ -18,7 +18,7 @@ try {
   var server = require('./server').default();
 
   if (env === 'development') {
-    var devel = require('./server/devel').default();
+    var devel = require('./devel').default();
     server.use(devel);
   }
 
