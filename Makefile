@@ -1,14 +1,17 @@
 
-.PHONY: build
+#.PHONY: deploy
 
-build:
-	NODE_ENV=production npm run build
-	rm -rf build/
-	mkdir build/
-	cp index.js package.json build/
-	mkdir build/static/
-	cp -r static/ build/static/
-	mkdir build/server/
-	cp -r server/ build/server/
-	rm static/client.js
+GM_USER ?= pi
+GM_IP ?= 192.168.0.105
+GM_DEPLOY_PATH ?= /home/${GM_USER}/app
+
+deploy:
+	npm run build
+	scp -r\
+		index.js \
+		package.json \
+		server/ \
+		static/ \
+		$(GM_USER)@$(GM_IP):$(GM_DEPLOY_PATH)
 	git checkout server/
+
